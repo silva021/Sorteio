@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ui_light_gray">
+
+    <TextView
+        android:id="@+id/text_title_participation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Ficha:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_participation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_title_participation"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/text_title_participation"
+        app:layout_constraintTop_toTopOf="@+id/text_title_participation"
+        tools:text="Ficha" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/text_title_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_title_participation" />
+
+    <TextView
+        android:id="@+id/text_title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nome:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/text_title_participation"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/text_title_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Contato:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/text_title_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_title_name" />
+
+    <TextView
+        android:id="@+id/text_value_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="Livre"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/text_title_name"
+        app:layout_constraintTop_toTopOf="@+id/text_title_name" />
+
+    <TextView
+        android:id="@+id/text_value_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="Livre"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/text_title_contact"
+        app:layout_constraintTop_toTopOf="@+id/text_title_contact" />
+
+
+    <Button
+        android:id="@+id/button_negative"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:enabled="false"
+        android:text="Remover"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/ui_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_title_contact"
+        app:layout_constraintTop_toBottomOf="@+id/text_title_contact"
+        app:layout_constraintVertical_bias="0" />
+
+
+    <Button
+        android:id="@+id/button_positive"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16sp"
+        android:text="Adicionar"
+        android:textColor="@color/white"
+        app:backgroundTint="#029EF1"
+        app:layout_constraintBottom_toBottomOf="@+id/button_negative"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_negative" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

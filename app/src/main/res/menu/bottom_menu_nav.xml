@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_raffle_one"
+        android:icon="@drawable/ticket_one"
+        android:title="Cartela 1" />
+    <item
+        android:id="@+id/navigation_raffle_two"
+        android:icon="@drawable/ticket_two"
+        android:title="Cartela 2" />
+</menu>
