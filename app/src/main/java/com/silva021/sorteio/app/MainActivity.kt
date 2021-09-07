@@ -2,6 +2,8 @@ package com.silva021.sorteio.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.core.animation.doOnEnd
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import com.silva021.sorteio.R
@@ -16,9 +18,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        splashLoading()
         changeBottomNavigationFragment()
     }
 
+    private fun splashLoading() {
+        with(binding) {
+            animationView.addAnimatorUpdateListener {
+                it.doOnEnd {
+                    animationView.pauseAnimation()
+                    animationView.visibility = View.GONE
+                    containerFragment.visibility = View.VISIBLE
+                }
+            }
+        }
+    }
 
     private fun changeBottomNavigationFragment() {
         binding.mainBottombarNavigation.setOnNavigationItemSelectedListener {
@@ -36,9 +50,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigateToHome(ordinalRaffleType: Int){
-        val bundle = bundleOf("raffle_page" to ordinalRaffleType)
-        findNavController(R.id.nav_host_fragment).navigate(R.id.homeFragment, bundle)
+    private fun navigateToHome(ordinalRaffleType: Int) {
+        val bundle = bundleOf("raffle_type" to ordinalRaffleType)
+        with(findNavController(R.id.nav_host_fragment)) {
+            popBackStack()
+            navigate(R.id.homeFragment, bundle)
+        }
     }
 
 }
