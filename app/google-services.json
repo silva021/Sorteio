@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "532990429403",
+    "project_id": "sorteio-a25ab",
+    "storage_bucket": "sorteio-a25ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532990429403:android:93879dcdcb6f761928a4fe",
+        "android_client_info": {
+          "package_name": "com.silva021.sorteio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532990429403-1umabm4u53o8g1v6f941kjhjkg61hbok.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.silva021.sorteio",
+            "certificate_hash": "c00a58dbe82da212ba8a681b5d6d03c22f01b3ab"
+          }
+        },
+        {
+          "client_id": "532990429403-qdfn9gc8lfk6t0c260j0ae699mf07t3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI8Xdspxl-mi8avBu0yfLhr4KjZYWA7TI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532990429403-qdfn9gc8lfk6t0c260j0ae699mf07t3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
