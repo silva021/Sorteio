@@ -8,7 +8,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import com.silva021.sorteio.R
 import com.silva021.sorteio.databinding.ActivityMainBinding
-import com.silva021.sorteio.home.domain.RaffleType
+import com.silva021.sorteio.home.domain.model.RaffleType
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy {
@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity() {
         binding.mainBottombarNavigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_raffle_one -> {
-                    navigateToHome(RaffleType.RAFFLE_ONE.ordinal)
+                    navigateToHome(RaffleType.RAFFLE_ONE.name)
                     true
                 }
                 R.id.navigation_raffle_two -> {
-                    navigateToHome(RaffleType.RAFFLE_TWO.ordinal)
+                    navigateToHome(RaffleType.RAFFLE_TWO.name)
                     true
                 }
                 else -> false
@@ -50,8 +50,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigateToHome(ordinalRaffleType: Int) {
-        val bundle = bundleOf("raffle_type" to ordinalRaffleType)
+    private fun navigateToHome(raffleType: String) {
+        val bundle = bundleOf("raffle_type" to raffleType)
         with(findNavController(R.id.nav_host_fragment)) {
             popBackStack()
             navigate(R.id.homeFragment, bundle)

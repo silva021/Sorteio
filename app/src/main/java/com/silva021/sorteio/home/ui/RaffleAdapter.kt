@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.silva021.sorteio.databinding.ItemRaffleTicketBinding
-import com.silva021.sorteio.home.domain.Raffle
+import com.silva021.sorteio.home.domain.model.Raffle
 
 typealias RaffleItemListener = (Raffle) -> Unit
 
 class RaffleAdapter(
-    private val list: List<Raffle>,
+    private var list: List<Raffle>,
     private val onClickListener: RaffleItemListener,
 ) : RecyclerView.Adapter<RaffleViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = RaffleViewHolder(
@@ -23,6 +23,11 @@ class RaffleAdapter(
     }
 
     override fun getItemCount(): Int = list.size
+
+    fun updateRaffleCard(list: List<Raffle>) {
+        this.list = list
+        notifyDataSetChanged()
+    }
 }
 
 class RaffleViewHolder(

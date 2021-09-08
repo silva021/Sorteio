@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.silva021.sorteio.app.disable
 import com.silva021.sorteio.app.enable
 import com.silva021.sorteio.databinding.RaffleDialogLayoutBinding
-import com.silva021.sorteio.home.domain.Raffle
+import com.silva021.sorteio.home.domain.model.Raffle
 
 class RaffleDialogFragment(
     private val raffle: Raffle
