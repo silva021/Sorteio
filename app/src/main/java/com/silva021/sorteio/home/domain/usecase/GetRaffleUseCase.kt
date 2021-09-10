@@ -5,12 +5,11 @@ import com.silva021.sorteio.home.data.RaffleRepository
 import com.silva021.sorteio.home.domain.model.Raffle
 
 interface GetRaffleUseCase {
-    operator fun invoke(typeRaffle: String): LiveData<List<Raffle>>
+    suspend operator fun invoke(typeRaffle: String): List<Raffle>
 }
 
 class GetRaffle(private val repository: RaffleRepository) : GetRaffleUseCase {
-    override fun invoke(typeRaffle: String): LiveData<List<Raffle>> {
+    override suspend fun invoke(typeRaffle: String): List<Raffle> {
         return repository.getRaffle(typeRaffle)
     }
-
 }

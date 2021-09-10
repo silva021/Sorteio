@@ -1,16 +1,13 @@
 package com.silva021.sorteio.home.domain.model
 
-import com.google.firebase.database.IgnoreExtraProperties
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@IgnoreExtraProperties
-class Raffle {
-    lateinit var title: String
-    var participant: Participant? = null
-
-    constructor()
-
-    constructor(title: String, participant: Participant?) {
-        this.title = title
-        this.participant = participant
-    }
-}
+@Entity(tableName = "t_Raffle")
+data class Raffle(
+    @PrimaryKey(autoGenerate = true) val uid: Int = 0,
+    val raffleType: String,
+    var title: String,
+    var participantName: String? = null,
+    var participantContact: String? = null
+)

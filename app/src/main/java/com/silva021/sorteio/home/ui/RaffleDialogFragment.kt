@@ -1,16 +1,19 @@
 package com.silva021.sorteio.home.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.silva021.sorteio.app.enable
 import com.silva021.sorteio.databinding.RaffleDialogLayoutBinding
+import com.silva021.sorteio.home.domain.clicks.RaffleDialogClicks
 import com.silva021.sorteio.home.domain.model.Raffle
 
 class RaffleDialogFragment(
-    private val raffle: Raffle
+    private val raffle: Raffle,
+    private val clicks: RaffleDialogClicks
 ) : BottomSheetDialogFragment() {
     var binding: RaffleDialogLayoutBinding? = null
     override fun onCreateView(
@@ -30,9 +33,19 @@ class RaffleDialogFragment(
         with(binding!!) {
             textParticipation.text = raffle.title
 
-            raffle.participant?.let {
-                textValueContact.text = it.contact
-                textValueName.text = it.name
+            buttonNegative.setOnClickListener {
+                clicks.clickNegativeListener(raffle)
+                this@RaffleDialogFragment.dismiss()
+            }
+
+            buttonPositive.setOnClickListener {
+                clicks.clickPositiveListener(raffle)
+                this@RaffleDialogFragment.dismiss()
+            }
+
+            raffle.participantName?.let {
+                textValueContact.text = raffle.participantContact
+                textValueName.text = it
                 buttonNegative.enable("#BD1919")
             }
         }
@@ -44,7 +57,8 @@ class RaffleDialogFragment(
 
     class Builder {
         lateinit var raffle: Raffle
+        lateinit var raffleDialogClicks: RaffleDialogClicks
 
-        fun build() = RaffleDialogFragment(raffle)
+        fun build() = RaffleDialogFragment(raffle, raffleDialogClicks)
     }
 }

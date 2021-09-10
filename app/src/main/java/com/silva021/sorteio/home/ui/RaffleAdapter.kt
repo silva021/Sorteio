@@ -38,7 +38,7 @@ class RaffleViewHolder(
     fun bind(raffle: Raffle) {
         with(binding) {
             textTitleRaffle.text = raffle.title
-            raffle.participant?.let {
+            raffle.participantName?.let {
                 disableCard()
             }
             cardRoot.setOnClickListener {
